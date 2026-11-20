@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Análise de gap — sistema de origem × repositório</title>
+<style>
+  :root { --fundo:#f7f8fa; --texto:#1f2933; --suave:#6b7785; --borda:#d9dee5; --cartao:#ffffff; --alerta:#c0392b; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--fundo); color:var(--texto); }
+  header { padding:20px 24px 8px; }
+  h1 { margin:0 0 4px; font-size:1.25rem; }
+  header p { margin:0; color:var(--suave); font-size:.9rem; }
+  .painel { display:flex; flex-wrap:wrap; gap:12px; padding:12px 24px; }
+  .kpi { background:var(--cartao); border:1px solid var(--borda); border-radius:10px; padding:10px 16px; min-width:150px; }
+  .kpi b { display:block; font-size:1.4rem; }
+  .kpi span { color:var(--suave); font-size:.8rem; }
+  .legenda { display:flex; flex-wrap:wrap; gap:14px; padding:4px 24px 0; font-size:.82rem; color:var(--suave); }
+  .legenda i { display:inline-block; width:11px; height:11px; border-radius:50%; margin-right:5px; vertical-align:-1px; }
+  .legenda .quadrado { border-radius:2px; background:#fff; border:2px solid #52606d; }
+  .legenda .criar { border-radius:2px; background:#fff; border:2px dashed var(--alerta); }
+  #grafo { width:100%; height:calc(100vh - 210px); min-height:420px; display:block; }
+  .aresta { stroke:#9aa5b1; stroke-opacity:.7; }
+  .aresta.criar { stroke:var(--alerta); stroke-dasharray:5 4; }
+  .aresta.relacao { stroke:#c3cad3; stroke-dasharray:2 4; }
+  .legenda .traco { width:22px; height:0; border-radius:0; border-top:2px dotted #9aa5b1; vertical-align:3px; }
+  .no text { font-size:11px; fill:var(--texto); pointer-events:none; paint-order:stroke; stroke:var(--fundo); stroke-width:3px; }
+  .no { cursor:grab; }
+  .apagado { opacity:.12; }
+  #dica { position:fixed; pointer-events:none; background:#1f2933; color:#fff; padding:8px 10px; border-radius:8px; font-size:.8rem; line-height:1.45; opacity:0; transition:opacity .12s; max-width:260px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Análise de gap — sistema de origem × repositório de dados</h1>
+  <p>Círculos são consultas do sistema de origem; quadrados são tabelas do repositório. Passe o mouse para ver os números, clique para destacar, arraste para reorganizar. A espessura da ligação indica a cobertura.</p>
+</header>
+<div class="painel" id="painel"></div>
+<div class="legenda" id="legenda"></div>
+<svg id="grafo" role="img" aria-label="Grafo de consultas e tabelas"></svg>
+<div id="dica"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script>
+const DADOS = {"nos": [{"id": "PLANO_ACAO", "tipo": "consulta", "dominio": "Planejamento", "campos": 17, "presentes": 8, "ausentes": 9, "sem_tabela": 0}, {"id": "tb_plano_acao", "tipo": "tabela", "dominio": "Planejamento", "campos": 17, "presentes": 8, "ausentes": 9, "sem_tabela": 0, "criar": false}, {"id": "CALENDARIO", "tipo": "consulta", "dominio": "Planejamento", "campos": 15, "presentes": 0, "ausentes": 0, "sem_tabela": 15}, {"id": "tb_calendario", "tipo": "tabela", "dominio": "Planejamento", "campos": 15, "presentes": 0, "ausentes": 0, "sem_tabela": 15, "criar": true}, {"id": "EVENTOS", "tipo": "consulta", "dominio": "Execução", "campos": 24, "presentes": 8, "ausentes": 16, "sem_tabela": 0}, {"id": "tb_eventos", "tipo": "tabela", "dominio": "Execução", "campos": 24, "presentes": 8, "ausentes": 16, "sem_tabela": 0, "criar": false}, {"id": "TURMAS", "tipo": "consulta", "dominio": "Execução", "campos": 16, "presentes": 9, "ausentes": 7, "sem_tabela": 0}, {"id": "tb_turmas", "tipo": "tabela", "dominio": "Execução", "campos": 16, "presentes": 9, "ausentes": 7, "sem_tabela": 0, "criar": false}, {"id": "PARTICIPANTES", "tipo": "consulta", "dominio": "Execução", "campos": 19, "presentes": 8, "ausentes": 11, "sem_tabela": 0}, {"id": "tb_participantes", "tipo": "tabela", "dominio": "Execução", "campos": 19, "presentes": 8, "ausentes": 11, "sem_tabela": 0, "criar": false}, {"id": "PRESENCA", "tipo": "consulta", "dominio": "Execução", "campos": 14, "presentes": 11, "ausentes": 3, "sem_tabela": 0}, {"id": "tb_presenca", "tipo": "tabela", "dominio": "Execução", "campos": 14, "presentes": 11, "ausentes": 3, "sem_tabela": 0, "criar": false}, {"id": "FATURAS", "tipo": "consulta", "dominio": "Financeiro", "campos": 17, "presentes": 8, "ausentes": 9, "sem_tabela": 0}, {"id": "tb_faturas", "tipo": "tabela", "dominio": "Financeiro", "campos": 17, "presentes": 8, "ausentes": 9, "sem_tabela": 0, "criar": false}, {"id": "DESPESAS", "tipo": "consulta", "dominio": "Financeiro", "campos": 17, "presentes": 5, "ausentes": 12, "sem_tabela": 0}, {"id": "tb_despesas", "tipo": "tabela", "dominio": "Financeiro", "campos": 17, "presentes": 5, "ausentes": 12, "sem_tabela": 0, "criar": false}, {"id": "INSTRUTORES", "tipo": "consulta", "dominio": "Cadastros", "campos": 18, "presentes": 12, "ausentes": 6, "sem_tabela": 0}, {"id": "tb_instrutores", "tipo": "tabela", "dominio": "Cadastros", "campos": 18, "presentes": 12, "ausentes": 6, "sem_tabela": 0, "criar": false}, {"id": "PARCEIROS", "tipo": "consulta", "dominio": "Cadastros", "campos": 17, "presentes": 7, "ausentes": 10, "sem_tabela": 0}, {"id": "tb_parceiros", "tipo": "tabela", "dominio": "Cadastros", "campos": 17, "presentes": 7, "ausentes": 10, "sem_tabela": 0, "criar": false}, {"id": "ALTERACAO_CANCELAMENTO", "tipo": "consulta", "dominio": "Suporte", "campos": 17, "presentes": 0, "ausentes": 0, "sem_tabela": 17}, {"id": "tb_alteracao_cancelamento", "tipo": "tabela", "dominio": "Suporte", "campos": 17, "presentes": 0, "ausentes": 0, "sem_tabela": 17, "criar": true}, {"id": "CERTIFICADOS", "tipo": "consulta", "dominio": "Suporte", "campos": 14, "presentes": 0, "ausentes": 0, "sem_tabela": 14}, {"id": "tb_certificados", "tipo": "tabela", "dominio": "Suporte", "campos": 14, "presentes": 0, "ausentes": 0, "sem_tabela": 14, "criar": true}], "arestas": [{"source": "PLANO_ACAO", "target": "tb_plano_acao", "tipo": "tabela", "cobertura": 0.47058823529411764, "criar": false}, {"source": "CALENDARIO", "target": "tb_calendario", "tipo": "tabela", "cobertura": 0.0, "criar": true}, {"source": "EVENTOS", "target": "tb_eventos", "tipo": "tabela", "cobertura": 0.3333333333333333, "criar": false}, {"source": "TURMAS", "target": "tb_turmas", "tipo": "tabela", "cobertura": 0.5625, "criar": false}, {"source": "PARTICIPANTES", "target": "tb_participantes", "tipo": "tabela", "cobertura": 0.42105263157894735, "criar": false}, {"source": "PRESENCA", "target": "tb_presenca", "tipo": "tabela", "cobertura": 0.7857142857142857, "criar": false}, {"source": "FATURAS", "target": "tb_faturas", "tipo": "tabela", "cobertura": 0.47058823529411764, "criar": false}, {"source": "DESPESAS", "target": "tb_despesas", "tipo": "tabela", "cobertura": 0.29411764705882354, "criar": false}, {"source": "INSTRUTORES", "target": "tb_instrutores", "tipo": "tabela", "cobertura": 0.6666666666666666, "criar": false}, {"source": "PARCEIROS", "target": "tb_parceiros", "tipo": "tabela", "cobertura": 0.4117647058823529, "criar": false}, {"source": "ALTERACAO_CANCELAMENTO", "target": "tb_alteracao_cancelamento", "tipo": "tabela", "cobertura": 0.0, "criar": true}, {"source": "CERTIFICADOS", "target": "tb_certificados", "tipo": "tabela", "cobertura": 0.0, "criar": true}, {"source": "TURMAS", "target": "EVENTOS", "tipo": "relacao", "campo": "Evento", "cobertura": 0, "criar": false}, {"source": "PARTICIPANTES", "target": "EVENTOS", "tipo": "relacao", "campo": "Evento", "cobertura": 0, "criar": false}, {"source": "PRESENCA", "target": "PARTICIPANTES", "tipo": "relacao", "campo": "Participante", "cobertura": 0, "criar": false}, {"source": "PRESENCA", "target": "TURMAS", "tipo": "relacao", "campo": "Turma", "cobertura": 0, "criar": false}, {"source": "FATURAS", "target": "EVENTOS", "tipo": "relacao", "campo": "Evento", "cobertura": 0, "criar": false}, {"source": "DESPESAS", "target": "EVENTOS", "tipo": "relacao", "campo": "Evento", "cobertura": 0, "criar": false}, {"source": "ALTERACAO_CANCELAMENTO", "target": "EVENTOS", "tipo": "relacao", "campo": "Evento", "cobertura": 0, "criar": false}, {"source": "CERTIFICADOS", "target": "EVENTOS", "tipo": "relacao", "campo": "Evento", "cobertura": 0, "criar": false}, {"source": "CERTIFICADOS", "target": "PARTICIPANTES", "tipo": "relacao", "campo": "Participante", "cobertura": 0, "criar": false}, {"source": "EVENTOS", "target": "INSTRUTORES", "tipo": "relacao", "campo": "Instrutor Principal", "cobertura": 0, "criar": false}, {"source": "EVENTOS", "target": "PARCEIROS", "tipo": "relacao", "campo": "Parceiro Local", "cobertura": 0, "criar": false}, {"source": "EVENTOS", "target": "PLANO_ACAO", "tipo": "relacao", "campo": "Plano de Ação", "cobertura": 0, "criar": false}, {"source": "EVENTOS", "target": "CALENDARIO", "tipo": "relacao", "campo": "Data de Início", "cobertura": 0, "criar": false}]};
+
+const cores = d3.scaleOrdinal()
+  .domain([...new Set(DADOS.nos.map(d => d.dominio))])
+  .range(["#2f6f9f", "#3d8b63", "#b7791f", "#7b5ea7", "#c0562f", "#4a7c8c"]);
+
+// ---- indicadores ----
+const consultas = DADOS.nos.filter(d => d.tipo === "consulta");
+const soma = campo => d3.sum(consultas, d => d[campo]);
+const total = soma("campos");
+const pct = v => (v / total * 100).toFixed(0) + "%";
+d3.select("#painel").selectAll("div").data([
+  [consultas.length, "consultas analisadas"],
+  [total, "campos analisados"],
+  [`${soma("presentes")} (${pct(soma("presentes"))})`, "presentes no repositório"],
+  [`${soma("ausentes")} (${pct(soma("ausentes"))})`, "ausentes em tabelas existentes"],
+  [`${soma("sem_tabela")} (${pct(soma("sem_tabela"))})`, "sem tabela correspondente"],
+]).join("div").attr("class", "kpi").html(d => `<b>${d[0]}</b><span>${d[1]}</span>`);
+
+const legenda = d3.select("#legenda");
+cores.domain().forEach(dom => legenda.append("span").html(`<i style="background:${cores(dom)}"></i>${dom}`));
+legenda.append("span").html('<i class="quadrado"></i>tabela existente');
+legenda.append("span").html('<i class="criar"></i>tabela a criar');
+legenda.append("span").html('<i class="traco"></i>consulta referencia outra consulta');
+
+// ---- grafo ----
+const svg = d3.select("#grafo");
+const { width, height } = svg.node().getBoundingClientRect();
+const raio = d3.scaleSqrt().domain([0, d3.max(DADOS.nos, d => d.campos)]).range([8, 26]);
+const nos = DADOS.nos.map(d => ({ ...d }));
+const arestas = DADOS.arestas.map(d => ({ ...d }));
+
+const sim = d3.forceSimulation(nos)
+  .force("link", d3.forceLink(arestas).id(d => d.id)
+    .distance(d => d.tipo === "relacao" ? 170 : 75).strength(d => d.tipo === "relacao" ? .35 : 1))
+  .force("carga", d3.forceManyBody().strength(-420))
+  .force("centro", d3.forceCenter(width / 2, height / 2))
+  .force("x", d3.forceX(width / 2).strength(.05))
+  .force("y", d3.forceY(height / 2).strength(.08))
+  .force("colisao", d3.forceCollide(d => raio(d.campos) + 26));
+
+const linha = svg.append("g").selectAll("line").data(arestas).join("line")
+  .attr("class", d => "aresta" + (d.criar ? " criar" : "") + (d.tipo === "relacao" ? " relacao" : ""))
+  .attr("stroke-width", d => d.tipo === "relacao" ? 1.5 : 1.5 + d.cobertura * 6);
+
+const no = svg.append("g").selectAll("g").data(nos).join("g").attr("class", "no")
+  .call(d3.drag()
+    .on("start", (e, d) => { if (!e.active) sim.alphaTarget(.3).restart(); d.fx = d.x; d.fy = d.y; })
+    .on("drag", (e, d) => { d.fx = e.x; d.fy = e.y; })
+    .on("end", (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
+
+no.filter(d => d.tipo === "consulta").append("circle")
+  .attr("r", d => raio(d.campos)).attr("fill", d => cores(d.dominio)).attr("stroke", "#fff").attr("stroke-width", 2);
+
+no.filter(d => d.tipo === "tabela").append("rect")
+  .attr("width", d => raio(d.campos) * 1.6).attr("height", d => raio(d.campos) * 1.6)
+  .attr("x", d => -raio(d.campos) * .8).attr("y", d => -raio(d.campos) * .8).attr("rx", 3)
+  .attr("fill", "#fff").attr("stroke", d => d.criar ? "var(--alerta)" : "#52606d")
+  .attr("stroke-width", 2).attr("stroke-dasharray", d => d.criar ? "5 4" : null);
+
+no.append("text").attr("text-anchor", "middle").attr("dy", d => raio(d.campos) + 14).text(d => d.id);
+
+sim.on("tick", () => {
+  nos.forEach(d => {
+    d.x = Math.max(40, Math.min(width - 40, d.x));
+    d.y = Math.max(30, Math.min(height - 40, d.y));
+  });
+  linha.attr("x1", d => d.source.x).attr("y1", d => d.source.y).attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+  no.attr("transform", d => `translate(${d.x},${d.y})`);
+});
+
+// ---- dica e destaque ----
+const dica = d3.select("#dica");
+no.on("mousemove", (e, d) => {
+  const cobertura = (d.presentes / d.campos * 100).toFixed(0);
+  const titulo = d.tipo === "consulta" ? `Consulta ${d.id}` : (d.criar ? `Tabela a criar: ${d.id}` : `Tabela ${d.id}`);
+  dica.style("opacity", 1).style("left", (e.clientX + 14) + "px").style("top", (e.clientY + 14) + "px")
+    .html(`<b>${titulo}</b><br>Domínio: ${d.dominio}<br>Campos: ${d.campos}<br>Presentes: ${d.presentes} (${cobertura}%)<br>Ausentes: ${d.ausentes}<br>Sem tabela: ${d.sem_tabela}`);
+}).on("mouseleave", () => dica.style("opacity", 0));
+
+let selecionado = null;
+no.on("click", (e, d) => {
+  e.stopPropagation();
+  selecionado = selecionado === d.id ? null : d.id;
+  const vizinhos = new Set([selecionado]);
+  arestas.forEach(a => {
+    if (a.source.id === selecionado) vizinhos.add(a.target.id);
+    if (a.target.id === selecionado) vizinhos.add(a.source.id);
+  });
+  no.classed("apagado", n => selecionado && !vizinhos.has(n.id));
+  linha.classed("apagado", a => selecionado && a.source.id !== selecionado && a.target.id !== selecionado);
+});
+svg.on("click", () => { selecionado = null; no.classed("apagado", false); linha.classed("apagado", false); });
+</script>
+</body>
+</html>

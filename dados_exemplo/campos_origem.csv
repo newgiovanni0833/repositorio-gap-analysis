@@ -1,0 +1,206 @@
+dominio;consulta;campo
+Planejamento;PLANO_ACAO;ID interno
+Planejamento;PLANO_ACAO;Status
+Planejamento;PLANO_ACAO;Data de Criação
+Planejamento;PLANO_ACAO;Data de Atualização
+Planejamento;PLANO_ACAO;Usuário Responsável
+Planejamento;PLANO_ACAO;Observações
+Planejamento;PLANO_ACAO;Código Externo
+Planejamento;PLANO_ACAO;Município
+Planejamento;PLANO_ACAO;Regional
+Planejamento;PLANO_ACAO;Ano de Referência
+Planejamento;PLANO_ACAO;Meta de Eventos
+Planejamento;PLANO_ACAO;Meta de Participantes
+Planejamento;PLANO_ACAO;Orçamento Previsto
+Planejamento;PLANO_ACAO;Área Temática
+Planejamento;PLANO_ACAO;Não Planejado
+Planejamento;PLANO_ACAO;Data de Aprovação
+Planejamento;PLANO_ACAO;Versão do Plano
+Planejamento;CALENDARIO;ID interno
+Planejamento;CALENDARIO;Status
+Planejamento;CALENDARIO;Data de Criação
+Planejamento;CALENDARIO;Data de Atualização
+Planejamento;CALENDARIO;Usuário Responsável
+Planejamento;CALENDARIO;Observações
+Planejamento;CALENDARIO;Código Externo
+Planejamento;CALENDARIO;Município
+Planejamento;CALENDARIO;Regional
+Planejamento;CALENDARIO;Data
+Planejamento;CALENDARIO;Dia Útil
+Planejamento;CALENDARIO;Feriado
+Planejamento;CALENDARIO;Descrição do Feriado
+Planejamento;CALENDARIO;Semana do Ano
+Planejamento;CALENDARIO;Período Letivo
+Execução;EVENTOS;ID interno
+Execução;EVENTOS;Status
+Execução;EVENTOS;Data de Criação
+Execução;EVENTOS;Data de Atualização
+Execução;EVENTOS;Usuário Responsável
+Execução;EVENTOS;Observações
+Execução;EVENTOS;Código Externo
+Execução;EVENTOS;Município
+Execução;EVENTOS;Regional
+Execução;EVENTOS;Título do Evento
+Execução;EVENTOS;Data de Início
+Execução;EVENTOS;Data de Término
+Execução;EVENTOS;Carga Horária
+Execução;EVENTOS;Local do Evento
+Execução;EVENTOS;Zona
+Execução;EVENTOS;Modalidade
+Execução;EVENTOS;Vagas Ofertadas
+Execução;EVENTOS;Hora de Conclusão
+Execução;EVENTOS;Estrutura Própria
+Execução;EVENTOS;Modular
+Execução;EVENTOS;Curso Vinculado
+Execução;EVENTOS;Instrutor Principal
+Execução;EVENTOS;Parceiro Local
+Execução;EVENTOS;Plano de Ação
+Execução;TURMAS;ID interno
+Execução;TURMAS;Status
+Execução;TURMAS;Data de Criação
+Execução;TURMAS;Data de Atualização
+Execução;TURMAS;Usuário Responsável
+Execução;TURMAS;Observações
+Execução;TURMAS;Código Externo
+Execução;TURMAS;Município
+Execução;TURMAS;Regional
+Execução;TURMAS;Evento
+Execução;TURMAS;Número da Turma
+Execução;TURMAS;Turno
+Execução;TURMAS;Vagas
+Execução;TURMAS;Data de Início
+Execução;TURMAS;Data de Término
+Execução;TURMAS;Sala
+Execução;PARTICIPANTES;ID interno
+Execução;PARTICIPANTES;Status
+Execução;PARTICIPANTES;Data de Criação
+Execução;PARTICIPANTES;Data de Atualização
+Execução;PARTICIPANTES;Usuário Responsável
+Execução;PARTICIPANTES;Observações
+Execução;PARTICIPANTES;Código Externo
+Execução;PARTICIPANTES;Município
+Execução;PARTICIPANTES;Regional
+Execução;PARTICIPANTES;Evento
+Execução;PARTICIPANTES;Nome
+Execução;PARTICIPANTES;Data de Nascimento
+Execução;PARTICIPANTES;Sexo
+Execução;PARTICIPANTES;Escolaridade
+Execução;PARTICIPANTES;Situação Final
+Execução;PARTICIPANTES;Nota Final
+Execução;PARTICIPANTES;Frequência
+Execução;PARTICIPANTES;Data da Inscrição
+Execução;PARTICIPANTES;Telefone
+Execução;PRESENCA;ID interno
+Execução;PRESENCA;Status
+Execução;PRESENCA;Data de Criação
+Execução;PRESENCA;Data de Atualização
+Execução;PRESENCA;Usuário Responsável
+Execução;PRESENCA;Observações
+Execução;PRESENCA;Código Externo
+Execução;PRESENCA;Município
+Execução;PRESENCA;Regional
+Execução;PRESENCA;Participante
+Execução;PRESENCA;Turma
+Execução;PRESENCA;Data da Aula
+Execução;PRESENCA;Presente
+Execução;PRESENCA;Justificativa
+Financeiro;FATURAS;ID interno
+Financeiro;FATURAS;Status
+Financeiro;FATURAS;Data de Criação
+Financeiro;FATURAS;Data de Atualização
+Financeiro;FATURAS;Usuário Responsável
+Financeiro;FATURAS;Observações
+Financeiro;FATURAS;Código Externo
+Financeiro;FATURAS;Município
+Financeiro;FATURAS;Regional
+Financeiro;FATURAS;Evento
+Financeiro;FATURAS;Número da Fatura
+Financeiro;FATURAS;Valor Bruto
+Financeiro;FATURAS;Valor Líquido
+Financeiro;FATURAS;Data de Emissão
+Financeiro;FATURAS;Data de Pagamento
+Financeiro;FATURAS;Retenção de Impostos
+Financeiro;FATURAS;Centro de Custo
+Financeiro;DESPESAS;ID interno
+Financeiro;DESPESAS;Status
+Financeiro;DESPESAS;Data de Criação
+Financeiro;DESPESAS;Data de Atualização
+Financeiro;DESPESAS;Usuário Responsável
+Financeiro;DESPESAS;Observações
+Financeiro;DESPESAS;Código Externo
+Financeiro;DESPESAS;Município
+Financeiro;DESPESAS;Regional
+Financeiro;DESPESAS;Evento
+Financeiro;DESPESAS;Tipo de Despesa
+Financeiro;DESPESAS;Valor
+Financeiro;DESPESAS;Data da Despesa
+Financeiro;DESPESAS;Fornecedor
+Financeiro;DESPESAS;Quantidade de Diárias
+Financeiro;DESPESAS;Quilometragem
+Financeiro;DESPESAS;Comprovante Anexado
+Cadastros;INSTRUTORES;ID interno
+Cadastros;INSTRUTORES;Status
+Cadastros;INSTRUTORES;Data de Criação
+Cadastros;INSTRUTORES;Data de Atualização
+Cadastros;INSTRUTORES;Usuário Responsável
+Cadastros;INSTRUTORES;Observações
+Cadastros;INSTRUTORES;Código Externo
+Cadastros;INSTRUTORES;Município
+Cadastros;INSTRUTORES;Regional
+Cadastros;INSTRUTORES;Nome
+Cadastros;INSTRUTORES;Categoria
+Cadastros;INSTRUTORES;Escolaridade
+Cadastros;INSTRUTORES;Data de Credenciamento
+Cadastros;INSTRUTORES;Situação do Cadastro
+Cadastros;INSTRUTORES;Área de Atuação
+Cadastros;INSTRUTORES;Telefone
+Cadastros;INSTRUTORES;E-mail
+Cadastros;INSTRUTORES;Treinamento Metodológico
+Cadastros;PARCEIROS;ID interno
+Cadastros;PARCEIROS;Status
+Cadastros;PARCEIROS;Data de Criação
+Cadastros;PARCEIROS;Data de Atualização
+Cadastros;PARCEIROS;Usuário Responsável
+Cadastros;PARCEIROS;Observações
+Cadastros;PARCEIROS;Código Externo
+Cadastros;PARCEIROS;Município
+Cadastros;PARCEIROS;Regional
+Cadastros;PARCEIROS;Nome
+Cadastros;PARCEIROS;Categoria do Parceiro
+Cadastros;PARCEIROS;Nome do Presidente
+Cadastros;PARCEIROS;Telefone
+Cadastros;PARCEIROS;E-mail
+Cadastros;PARCEIROS;Máximo de Eventos por Mês
+Cadastros;PARCEIROS;Necessita de Mobilização
+Cadastros;PARCEIROS;Homologado
+Suporte;ALTERACAO_CANCELAMENTO;ID interno
+Suporte;ALTERACAO_CANCELAMENTO;Status
+Suporte;ALTERACAO_CANCELAMENTO;Data de Criação
+Suporte;ALTERACAO_CANCELAMENTO;Data de Atualização
+Suporte;ALTERACAO_CANCELAMENTO;Usuário Responsável
+Suporte;ALTERACAO_CANCELAMENTO;Observações
+Suporte;ALTERACAO_CANCELAMENTO;Código Externo
+Suporte;ALTERACAO_CANCELAMENTO;Município
+Suporte;ALTERACAO_CANCELAMENTO;Regional
+Suporte;ALTERACAO_CANCELAMENTO;Evento
+Suporte;ALTERACAO_CANCELAMENTO;Tipo de Solicitação
+Suporte;ALTERACAO_CANCELAMENTO;Motivo
+Suporte;ALTERACAO_CANCELAMENTO;Data da Solicitação
+Suporte;ALTERACAO_CANCELAMENTO;Solicitante
+Suporte;ALTERACAO_CANCELAMENTO;Aprovador
+Suporte;ALTERACAO_CANCELAMENTO;Data da Decisão
+Suporte;ALTERACAO_CANCELAMENTO;Nova Data de Início
+Suporte;CERTIFICADOS;ID interno
+Suporte;CERTIFICADOS;Status
+Suporte;CERTIFICADOS;Data de Criação
+Suporte;CERTIFICADOS;Data de Atualização
+Suporte;CERTIFICADOS;Usuário Responsável
+Suporte;CERTIFICADOS;Observações
+Suporte;CERTIFICADOS;Código Externo
+Suporte;CERTIFICADOS;Município
+Suporte;CERTIFICADOS;Regional
+Suporte;CERTIFICADOS;Participante
+Suporte;CERTIFICADOS;Evento
+Suporte;CERTIFICADOS;Número do Certificado
+Suporte;CERTIFICADOS;Data de Emissão
+Suporte;CERTIFICADOS;Código de Validação

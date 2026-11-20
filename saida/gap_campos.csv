@@ -1,0 +1,206 @@
+﻿dominio;consulta;campo;coluna_sugerida;tabela_destino;status
+Planejamento;PLANO_ACAO;ID interno;id_interno;tb_plano_acao;Presente
+Planejamento;PLANO_ACAO;Status;status;tb_plano_acao;Presente
+Planejamento;PLANO_ACAO;Data de Criação;data_de_criacao;tb_plano_acao;Ausente em tabela existente
+Planejamento;PLANO_ACAO;Data de Atualização;data_de_atualizacao;tb_plano_acao;Ausente em tabela existente
+Planejamento;PLANO_ACAO;Usuário Responsável;usuario_responsavel;tb_plano_acao;Presente
+Planejamento;PLANO_ACAO;Observações;observacoes;tb_plano_acao;Ausente em tabela existente
+Planejamento;PLANO_ACAO;Código Externo;codigo_externo;tb_plano_acao;Presente
+Planejamento;PLANO_ACAO;Município;municipio;tb_plano_acao;Ausente em tabela existente
+Planejamento;PLANO_ACAO;Regional;regional;tb_plano_acao;Presente
+Planejamento;PLANO_ACAO;Ano de Referência;ano_de_referencia;tb_plano_acao;Ausente em tabela existente
+Planejamento;PLANO_ACAO;Meta de Eventos;meta_de_eventos;tb_plano_acao;Presente
+Planejamento;PLANO_ACAO;Meta de Participantes;meta_de_participantes;tb_plano_acao;Presente
+Planejamento;PLANO_ACAO;Orçamento Previsto;orcamento_previsto;tb_plano_acao;Ausente em tabela existente
+Planejamento;PLANO_ACAO;Área Temática;area_tematica;tb_plano_acao;Ausente em tabela existente
+Planejamento;PLANO_ACAO;Não Planejado;nao_planejado;tb_plano_acao;Ausente em tabela existente
+Planejamento;PLANO_ACAO;Data de Aprovação;data_de_aprovacao;tb_plano_acao;Ausente em tabela existente
+Planejamento;PLANO_ACAO;Versão do Plano;versao_do_plano;tb_plano_acao;Presente
+Planejamento;CALENDARIO;ID interno;id_interno;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Status;status;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Data de Criação;data_de_criacao;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Data de Atualização;data_de_atualizacao;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Usuário Responsável;usuario_responsavel;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Observações;observacoes;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Código Externo;codigo_externo;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Município;municipio;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Regional;regional;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Data;data;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Dia Útil;dia_util;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Feriado;feriado;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Descrição do Feriado;descricao_do_feriado;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Semana do Ano;semana_do_ano;tb_calendario;Sem tabela
+Planejamento;CALENDARIO;Período Letivo;periodo_letivo;tb_calendario;Sem tabela
+Execução;EVENTOS;ID interno;id_interno;tb_eventos;Presente
+Execução;EVENTOS;Status;status;tb_eventos;Presente
+Execução;EVENTOS;Data de Criação;data_de_criacao;tb_eventos;Presente
+Execução;EVENTOS;Data de Atualização;data_de_atualizacao;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Usuário Responsável;usuario_responsavel;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Observações;observacoes;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Código Externo;codigo_externo;tb_eventos;Presente
+Execução;EVENTOS;Município;municipio;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Regional;regional;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Título do Evento;titulo_do_evento;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Data de Início;data_de_inicio;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Data de Término;data_de_termino;tb_eventos;Presente
+Execução;EVENTOS;Carga Horária;carga_horaria;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Local do Evento;local_do_evento;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Zona;zona;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Modalidade;modalidade;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Vagas Ofertadas;vagas_ofertadas;tb_eventos;Presente
+Execução;EVENTOS;Hora de Conclusão;hora_de_conclusao;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Estrutura Própria;estrutura_propria;tb_eventos;Presente
+Execução;EVENTOS;Modular;modular;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Curso Vinculado;curso_vinculado;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Instrutor Principal;instrutor_principal;tb_eventos;Presente
+Execução;EVENTOS;Parceiro Local;parceiro_local;tb_eventos;Ausente em tabela existente
+Execução;EVENTOS;Plano de Ação;plano_de_acao;tb_eventos;Ausente em tabela existente
+Execução;TURMAS;ID interno;id_interno;tb_turmas;Presente
+Execução;TURMAS;Status;status;tb_turmas;Presente
+Execução;TURMAS;Data de Criação;data_de_criacao;tb_turmas;Ausente em tabela existente
+Execução;TURMAS;Data de Atualização;data_de_atualizacao;tb_turmas;Presente
+Execução;TURMAS;Usuário Responsável;usuario_responsavel;tb_turmas;Ausente em tabela existente
+Execução;TURMAS;Observações;observacoes;tb_turmas;Ausente em tabela existente
+Execução;TURMAS;Código Externo;codigo_externo;tb_turmas;Presente
+Execução;TURMAS;Município;municipio;tb_turmas;Ausente em tabela existente
+Execução;TURMAS;Regional;regional;tb_turmas;Presente
+Execução;TURMAS;Evento;evento;tb_turmas;Ausente em tabela existente
+Execução;TURMAS;Número da Turma;numero_da_turma;tb_turmas;Ausente em tabela existente
+Execução;TURMAS;Turno;turno;tb_turmas;Presente
+Execução;TURMAS;Vagas;vagas;tb_turmas;Ausente em tabela existente
+Execução;TURMAS;Data de Início;data_de_inicio;tb_turmas;Presente
+Execução;TURMAS;Data de Término;data_de_termino;tb_turmas;Presente
+Execução;TURMAS;Sala;sala;tb_turmas;Presente
+Execução;PARTICIPANTES;ID interno;id_interno;tb_participantes;Presente
+Execução;PARTICIPANTES;Status;status;tb_participantes;Presente
+Execução;PARTICIPANTES;Data de Criação;data_de_criacao;tb_participantes;Presente
+Execução;PARTICIPANTES;Data de Atualização;data_de_atualizacao;tb_participantes;Presente
+Execução;PARTICIPANTES;Usuário Responsável;usuario_responsavel;tb_participantes;Ausente em tabela existente
+Execução;PARTICIPANTES;Observações;observacoes;tb_participantes;Ausente em tabela existente
+Execução;PARTICIPANTES;Código Externo;codigo_externo;tb_participantes;Ausente em tabela existente
+Execução;PARTICIPANTES;Município;municipio;tb_participantes;Presente
+Execução;PARTICIPANTES;Regional;regional;tb_participantes;Presente
+Execução;PARTICIPANTES;Evento;evento;tb_participantes;Ausente em tabela existente
+Execução;PARTICIPANTES;Nome;nome;tb_participantes;Ausente em tabela existente
+Execução;PARTICIPANTES;Data de Nascimento;data_de_nascimento;tb_participantes;Ausente em tabela existente
+Execução;PARTICIPANTES;Sexo;sexo;tb_participantes;Presente
+Execução;PARTICIPANTES;Escolaridade;escolaridade;tb_participantes;Ausente em tabela existente
+Execução;PARTICIPANTES;Situação Final;situacao_final;tb_participantes;Ausente em tabela existente
+Execução;PARTICIPANTES;Nota Final;nota_final;tb_participantes;Ausente em tabela existente
+Execução;PARTICIPANTES;Frequência;frequencia;tb_participantes;Ausente em tabela existente
+Execução;PARTICIPANTES;Data da Inscrição;data_da_inscricao;tb_participantes;Presente
+Execução;PARTICIPANTES;Telefone;telefone;tb_participantes;Ausente em tabela existente
+Execução;PRESENCA;ID interno;id_interno;tb_presenca;Presente
+Execução;PRESENCA;Status;status;tb_presenca;Presente
+Execução;PRESENCA;Data de Criação;data_de_criacao;tb_presenca;Presente
+Execução;PRESENCA;Data de Atualização;data_de_atualizacao;tb_presenca;Ausente em tabela existente
+Execução;PRESENCA;Usuário Responsável;usuario_responsavel;tb_presenca;Presente
+Execução;PRESENCA;Observações;observacoes;tb_presenca;Presente
+Execução;PRESENCA;Código Externo;codigo_externo;tb_presenca;Presente
+Execução;PRESENCA;Município;municipio;tb_presenca;Ausente em tabela existente
+Execução;PRESENCA;Regional;regional;tb_presenca;Presente
+Execução;PRESENCA;Participante;participante;tb_presenca;Presente
+Execução;PRESENCA;Turma;turma;tb_presenca;Presente
+Execução;PRESENCA;Data da Aula;data_da_aula;tb_presenca;Presente
+Execução;PRESENCA;Presente;presente;tb_presenca;Ausente em tabela existente
+Execução;PRESENCA;Justificativa;justificativa;tb_presenca;Presente
+Financeiro;FATURAS;ID interno;id_interno;tb_faturas;Presente
+Financeiro;FATURAS;Status;status;tb_faturas;Presente
+Financeiro;FATURAS;Data de Criação;data_de_criacao;tb_faturas;Ausente em tabela existente
+Financeiro;FATURAS;Data de Atualização;data_de_atualizacao;tb_faturas;Presente
+Financeiro;FATURAS;Usuário Responsável;usuario_responsavel;tb_faturas;Ausente em tabela existente
+Financeiro;FATURAS;Observações;observacoes;tb_faturas;Ausente em tabela existente
+Financeiro;FATURAS;Código Externo;codigo_externo;tb_faturas;Ausente em tabela existente
+Financeiro;FATURAS;Município;municipio;tb_faturas;Ausente em tabela existente
+Financeiro;FATURAS;Regional;regional;tb_faturas;Presente
+Financeiro;FATURAS;Evento;evento;tb_faturas;Presente
+Financeiro;FATURAS;Número da Fatura;numero_da_fatura;tb_faturas;Ausente em tabela existente
+Financeiro;FATURAS;Valor Bruto;valor_bruto;tb_faturas;Presente
+Financeiro;FATURAS;Valor Líquido;valor_liquido;tb_faturas;Ausente em tabela existente
+Financeiro;FATURAS;Data de Emissão;data_de_emissao;tb_faturas;Presente
+Financeiro;FATURAS;Data de Pagamento;data_de_pagamento;tb_faturas;Ausente em tabela existente
+Financeiro;FATURAS;Retenção de Impostos;retencao_de_impostos;tb_faturas;Ausente em tabela existente
+Financeiro;FATURAS;Centro de Custo;centro_de_custo;tb_faturas;Presente
+Financeiro;DESPESAS;ID interno;id_interno;tb_despesas;Presente
+Financeiro;DESPESAS;Status;status;tb_despesas;Ausente em tabela existente
+Financeiro;DESPESAS;Data de Criação;data_de_criacao;tb_despesas;Ausente em tabela existente
+Financeiro;DESPESAS;Data de Atualização;data_de_atualizacao;tb_despesas;Ausente em tabela existente
+Financeiro;DESPESAS;Usuário Responsável;usuario_responsavel;tb_despesas;Ausente em tabela existente
+Financeiro;DESPESAS;Observações;observacoes;tb_despesas;Ausente em tabela existente
+Financeiro;DESPESAS;Código Externo;codigo_externo;tb_despesas;Presente
+Financeiro;DESPESAS;Município;municipio;tb_despesas;Ausente em tabela existente
+Financeiro;DESPESAS;Regional;regional;tb_despesas;Presente
+Financeiro;DESPESAS;Evento;evento;tb_despesas;Ausente em tabela existente
+Financeiro;DESPESAS;Tipo de Despesa;tipo_de_despesa;tb_despesas;Presente
+Financeiro;DESPESAS;Valor;valor;tb_despesas;Ausente em tabela existente
+Financeiro;DESPESAS;Data da Despesa;data_da_despesa;tb_despesas;Ausente em tabela existente
+Financeiro;DESPESAS;Fornecedor;fornecedor;tb_despesas;Ausente em tabela existente
+Financeiro;DESPESAS;Quantidade de Diárias;quantidade_de_diarias;tb_despesas;Ausente em tabela existente
+Financeiro;DESPESAS;Quilometragem;quilometragem;tb_despesas;Presente
+Financeiro;DESPESAS;Comprovante Anexado;comprovante_anexado;tb_despesas;Ausente em tabela existente
+Cadastros;INSTRUTORES;ID interno;id_interno;tb_instrutores;Presente
+Cadastros;INSTRUTORES;Status;status;tb_instrutores;Presente
+Cadastros;INSTRUTORES;Data de Criação;data_de_criacao;tb_instrutores;Presente
+Cadastros;INSTRUTORES;Data de Atualização;data_de_atualizacao;tb_instrutores;Presente
+Cadastros;INSTRUTORES;Usuário Responsável;usuario_responsavel;tb_instrutores;Presente
+Cadastros;INSTRUTORES;Observações;observacoes;tb_instrutores;Presente
+Cadastros;INSTRUTORES;Código Externo;codigo_externo;tb_instrutores;Ausente em tabela existente
+Cadastros;INSTRUTORES;Município;municipio;tb_instrutores;Presente
+Cadastros;INSTRUTORES;Regional;regional;tb_instrutores;Ausente em tabela existente
+Cadastros;INSTRUTORES;Nome;nome;tb_instrutores;Presente
+Cadastros;INSTRUTORES;Categoria;categoria;tb_instrutores;Presente
+Cadastros;INSTRUTORES;Escolaridade;escolaridade;tb_instrutores;Ausente em tabela existente
+Cadastros;INSTRUTORES;Data de Credenciamento;data_de_credenciamento;tb_instrutores;Ausente em tabela existente
+Cadastros;INSTRUTORES;Situação do Cadastro;situacao_do_cadastro;tb_instrutores;Presente
+Cadastros;INSTRUTORES;Área de Atuação;area_de_atuacao;tb_instrutores;Presente
+Cadastros;INSTRUTORES;Telefone;telefone;tb_instrutores;Ausente em tabela existente
+Cadastros;INSTRUTORES;E-mail;e_mail;tb_instrutores;Presente
+Cadastros;INSTRUTORES;Treinamento Metodológico;treinamento_metodologico;tb_instrutores;Ausente em tabela existente
+Cadastros;PARCEIROS;ID interno;id_interno;tb_parceiros;Presente
+Cadastros;PARCEIROS;Status;status;tb_parceiros;Ausente em tabela existente
+Cadastros;PARCEIROS;Data de Criação;data_de_criacao;tb_parceiros;Ausente em tabela existente
+Cadastros;PARCEIROS;Data de Atualização;data_de_atualizacao;tb_parceiros;Ausente em tabela existente
+Cadastros;PARCEIROS;Usuário Responsável;usuario_responsavel;tb_parceiros;Ausente em tabela existente
+Cadastros;PARCEIROS;Observações;observacoes;tb_parceiros;Presente
+Cadastros;PARCEIROS;Código Externo;codigo_externo;tb_parceiros;Ausente em tabela existente
+Cadastros;PARCEIROS;Município;municipio;tb_parceiros;Presente
+Cadastros;PARCEIROS;Regional;regional;tb_parceiros;Ausente em tabela existente
+Cadastros;PARCEIROS;Nome;nome;tb_parceiros;Presente
+Cadastros;PARCEIROS;Categoria do Parceiro;categoria_do_parceiro;tb_parceiros;Ausente em tabela existente
+Cadastros;PARCEIROS;Nome do Presidente;nome_do_presidente;tb_parceiros;Presente
+Cadastros;PARCEIROS;Telefone;telefone;tb_parceiros;Ausente em tabela existente
+Cadastros;PARCEIROS;E-mail;e_mail;tb_parceiros;Ausente em tabela existente
+Cadastros;PARCEIROS;Máximo de Eventos por Mês;maximo_de_eventos_por_mes;tb_parceiros;Presente
+Cadastros;PARCEIROS;Necessita de Mobilização;necessita_de_mobilizacao;tb_parceiros;Presente
+Cadastros;PARCEIROS;Homologado;homologado;tb_parceiros;Ausente em tabela existente
+Suporte;ALTERACAO_CANCELAMENTO;ID interno;id_interno;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Status;status;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Data de Criação;data_de_criacao;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Data de Atualização;data_de_atualizacao;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Usuário Responsável;usuario_responsavel;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Observações;observacoes;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Código Externo;codigo_externo;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Município;municipio;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Regional;regional;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Evento;evento;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Tipo de Solicitação;tipo_de_solicitacao;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Motivo;motivo;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Data da Solicitação;data_da_solicitacao;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Solicitante;solicitante;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Aprovador;aprovador;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Data da Decisão;data_da_decisao;tb_alteracao_cancelamento;Sem tabela
+Suporte;ALTERACAO_CANCELAMENTO;Nova Data de Início;nova_data_de_inicio;tb_alteracao_cancelamento;Sem tabela
+Suporte;CERTIFICADOS;ID interno;id_interno;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Status;status;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Data de Criação;data_de_criacao;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Data de Atualização;data_de_atualizacao;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Usuário Responsável;usuario_responsavel;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Observações;observacoes;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Código Externo;codigo_externo;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Município;municipio;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Regional;regional;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Participante;participante;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Evento;evento;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Número do Certificado;numero_do_certificado;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Data de Emissão;data_de_emissao;tb_certificados;Sem tabela
+Suporte;CERTIFICADOS;Código de Validação;codigo_de_validacao;tb_certificados;Sem tabela

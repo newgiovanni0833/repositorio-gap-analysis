@@ -1,0 +1,13 @@
+consulta;tabela
+PLANO_ACAO;tb_plano_acao
+CALENDARIO;
+EVENTOS;tb_eventos
+TURMAS;tb_turmas
+PARTICIPANTES;tb_participantes
+PRESENCA;tb_presenca
+FATURAS;tb_faturas
+DESPESAS;tb_despesas
+INSTRUTORES;tb_instrutores
+PARCEIROS;tb_parceiros
+ALTERACAO_CANCELAMENTO;
+CERTIFICADOS;
