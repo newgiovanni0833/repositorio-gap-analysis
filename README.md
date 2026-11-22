@@ -90,4 +90,4 @@ Python · D3.js (force-directed graph) · HTML · CSS · JavaScript
 
 ## 👤 Autor
 
-**Newton Giovanni** · Economista e Analista de Dados Estratégicos · [LinkedIn](https://www.linkedin.com/in/newton-giovanni/)
+**Newton Giovanni** · Economista e Analista de Dados Estratégicos · [LinkedIn](https://www.linkedin.com/in/newton-giovanni/) · [Portfólio](https://github.com/newgiovanni0833)
