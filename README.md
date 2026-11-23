@@ -1,12 +1,12 @@
-# 🧭 Análise de gap: sistema de origem × repositório de dados
+# Análise de gap: sistema de origem × repositório de dados
 
 Quanto do que o sistema operacional mostra já está guardado no repositório analítico? Este projeto responde campo a campo e transforma a resposta em backlog de modelagem e em um diagrama interativo.
 
-> ⚠️ **Dados fictícios.** O "sistema de gestão de cursos" e seus campos foram inventados. O método é o que apliquei em um repositório institucional real, com 27 consultas e cerca de 2,2 mil campos.
+> **Dados fictícios.** O "sistema de gestão de cursos" e seus campos foram inventados. O método é o que apliquei em um repositório institucional real, com 27 consultas e cerca de 2,2 mil campos.
 
 ![Diagrama interativo da análise de gap](docs/diagrama.png)
 
-## 🎯 Problema de negócio
+## Problema de negócio
 
 A organização vai trocar o sistema que usa no dia a dia. Tudo o que não estiver copiado para o repositório próprio se perde na migração, e os painéis que dependem desses dados param.
 
@@ -16,7 +16,7 @@ Antes de modelar, é preciso saber com precisão:
 - quais **faltam em tabelas que já existem** (basta incluir a coluna);
 - quais pertencem a consultas **sem tabela nenhuma** (é preciso criar).
 
-## 🧮 Método
+## Método
 
 ```mermaid
 flowchart LR
@@ -31,7 +31,7 @@ flowchart LR
 
 A comparação ignora acentos, maiúsculas e pontuação, porque o sistema exibe rótulos como `Data de Início` e o repositório guarda `data_inicio`.
 
-## ▶️ Como executar
+## Como executar
 
 Requer apenas Python 3.9+ (biblioteca padrão).
 
@@ -50,7 +50,7 @@ Saídas em `saida/`:
 
 Para usar com dados reais, substitua os arquivos de `dados_exemplo/` mantendo os mesmos cabeçalhos.
 
-## 📊 Resultado da demonstração
+## Resultado da demonstração
 
 | | Campos | % |
 |---|---:|---:|
@@ -63,7 +63,7 @@ Para usar com dados reais, substitua os arquivos de `dados_exemplo/` mantendo os
 
 O diagrama deixa visível o que a tabela não mostra: `EVENTOS` é o centro do modelo, referenciado por seis outras consultas, e é justamente uma das tabelas com menor cobertura. É por ela que a modelagem deve começar.
 
-## 🌐 Diagrama interativo
+## Diagrama interativo
 
 O arquivo [`docs/diagrama.html`](docs/diagrama.html) é uma página única, sem servidor. Para publicá-la, ative o GitHub Pages do repositório apontando para a pasta `docs/`.
 
@@ -72,7 +72,7 @@ O arquivo [`docs/diagrama.html`](docs/diagrama.html) é uma página única, sem 
 - A espessura da ligação indica a cobertura.
 - Passe o mouse para ver os números, clique para destacar os vizinhos, arraste para reorganizar.
 
-## 📁 Estrutura
+## Estrutura
 
 ```text
 ├── scripts/gerar_dados_exemplo.py   # cenário fictício
@@ -84,10 +84,10 @@ O arquivo [`docs/diagrama.html`](docs/diagrama.html) é uma página única, sem 
 └── docs/                            # diagrama publicado
 ```
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 Python · D3.js (force-directed graph) · HTML · CSS · JavaScript
 
-## 👤 Autor
+## Autor
 
 **Newton Giovanni** · Economista e Analista de Dados Estratégicos · [LinkedIn](https://www.linkedin.com/in/newton-giovanni/) · [Portfólio](https://github.com/newgiovanni0833)
